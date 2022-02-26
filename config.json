@@ -1,10 +1,8 @@
 {
     "sequence": {
-      "height": 40,
       "actorMargin": 80,
       "mirrorActors": true,
       "bottomMarginAdj": 1,
-      "width": 40,
       "diagramMarginY": 10
     },
     "theme": "forest"
