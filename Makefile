@@ -1,6 +1,7 @@
 all: $(addsuffix .png, $(basename $(wildcard *.mmd)))
 
 %.png: %.mmd style.css config.json
-	mmdc -C style.css -w 2048 -H 1536 -c config.json -t forest -i $< -s 5 -o $@
-	exiftool -Source"<=$<" $@
-	open $@
+	@mmdc -C style.css -c config.json -i $< -s 5 -o $@
+	@exiftool -Source"<=$<" $@
+	@convert -fuzz 5% -trim -border 100 -bordercolor white +repage $@ $@
+	@open $@
